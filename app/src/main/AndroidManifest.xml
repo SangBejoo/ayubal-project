@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.gerin.inventory">
+
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/inventory_logo"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity
+            android:name="com.example.gerin.inventory.MainActivity"
+            android:exported="false" />
+        <activity
+            android:name="com.example.gerin.inventory.login"
+            android:theme="@style/noTitle">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.example.gerin.inventory.CatalogActivity"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name="com.example.gerin.inventory.EditorActivity"
+            android:parentActivityName="com.example.gerin.inventory.CatalogActivity" />
+        <activity
+            android:name="com.example.gerin.inventory.ItemActivity"
+            android:parentActivityName="com.example.gerin.inventory.CatalogActivity"
+            android:theme="@style/noTitle" />
+
+        <provider
+            android:name="com.example.gerin.inventory.data.ItemProvider"
+            android:authorities="com.example.gerin.inventory"
+            android:exported="false" />
+    </application>
+
+</manifest>
